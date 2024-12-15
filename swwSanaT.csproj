@@ -1,0 +1,507 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7AF3284-9922-45FD-8C47-10C593C8E305}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>swwSanaT</RootNamespace>
+    <AssemblyName>swwSanaT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>packages\Enums.NET.4.0.1\lib\net45\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>packages\MathNet.Numerics.Signed.4.15.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.2.3.2\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.1.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.6.2\lib\net472\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.6.2\lib\net472\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.6.2\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.6.2\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>packages\SixLabors.ImageSharp.2.1.4\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Xml.6.0.1\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMINISTRADOR\wfAReportes.aspx" />
+    <Content Include="ADMINISTRADOR\wfAVentas.aspx" />
+    <Content Include="ADMINISTRADOR\wfAProducto.aspx" />
+    <Content Include="ADMINISTRADOR\wfAUsuarios.aspx" />
+    <Content Include="ADMINISTRADOR\wfACerrarSesion.aspx" />
+    <Content Include="ADMINISTRADOR\wfAInicio.aspx" />
+    <Content Include="CLIENTE\wfcMisDatos.aspx" />
+    <Content Include="CLIENTE\wfCMisCompras.aspx" />
+    <Content Include="CLIENTE\wfCCarrito.aspx" />
+    <Content Include="CLIENTE\wfCCerrarSesion.aspx" />
+    <Content Include="CLIENTE\wfCInicio.aspx" />
+    <Content Include="plantilla\css\style.css" />
+    <Content Include="plantilla\images\exfoliacion.jpg" />
+    <Content Include="plantilla\images\facial.jpg" />
+    <Content Include="plantilla\images\fisio.jpg" />
+    <Content Include="plantilla\images\lipo.jpg" />
+    <Content Include="plantilla\images\mas.jpg" />
+    <Content Include="plantilla\images\masajesRe.jpg" />
+    <Content Include="plantilla\images\nopd.jpg" />
+    <Content Include="plantilla\images\shi.jpg" />
+    <Content Include="plantilla\images\shiatsu.jpg" />
+    <Content Include="plantilla\images\sueco.jpg" />
+    <Content Include="PRODUCTOS\1.png" />
+    <Content Include="PRODUCTOS\10.png" />
+    <Content Include="PRODUCTOS\11.png" />
+    <Content Include="PRODUCTOS\12.png" />
+    <Content Include="PRODUCTOS\13.png" />
+    <Content Include="PRODUCTOS\14.png" />
+    <Content Include="PRODUCTOS\15.png" />
+    <Content Include="PRODUCTOS\16.png" />
+    <Content Include="PRODUCTOS\17.png" />
+    <Content Include="PRODUCTOS\18.png" />
+    <Content Include="PRODUCTOS\19.png" />
+    <Content Include="PRODUCTOS\2.png" />
+    <Content Include="PRODUCTOS\20.png" />
+    <Content Include="PRODUCTOS\21.png" />
+    <Content Include="PRODUCTOS\22.png" />
+    <Content Include="PRODUCTOS\23.png" />
+    <Content Include="PRODUCTOS\24.png" />
+    <Content Include="PRODUCTOS\25.png" />
+    <Content Include="PRODUCTOS\26.png" />
+    <Content Include="PRODUCTOS\27.png" />
+    <Content Include="PRODUCTOS\28.png" />
+    <Content Include="PRODUCTOS\29.png" />
+    <Content Include="PRODUCTOS\3.png" />
+    <Content Include="PRODUCTOS\30.png" />
+    <Content Include="PRODUCTOS\31.png" />
+    <Content Include="PRODUCTOS\32.png" />
+    <Content Include="PRODUCTOS\33.png" />
+    <Content Include="PRODUCTOS\34.png" />
+    <Content Include="PRODUCTOS\35.png" />
+    <Content Include="PRODUCTOS\36.png" />
+    <Content Include="PRODUCTOS\37.png" />
+    <Content Include="PRODUCTOS\38.png" />
+    <Content Include="PRODUCTOS\39.png" />
+    <Content Include="PRODUCTOS\4.png" />
+    <Content Include="PRODUCTOS\40.png" />
+    <Content Include="PRODUCTOS\41.png" />
+    <Content Include="PRODUCTOS\42.png" />
+    <Content Include="PRODUCTOS\43.png" />
+    <Content Include="PRODUCTOS\44.png" />
+    <Content Include="PRODUCTOS\45.png" />
+    <Content Include="PRODUCTOS\46.png" />
+    <Content Include="PRODUCTOS\47.png" />
+    <Content Include="PRODUCTOS\48.png" />
+    <Content Include="PRODUCTOS\49.png" />
+    <Content Include="PRODUCTOS\5.png" />
+    <Content Include="PRODUCTOS\50.png" />
+    <Content Include="PRODUCTOS\51.png" />
+    <Content Include="PRODUCTOS\52.png" />
+    <Content Include="PRODUCTOS\53.png" />
+    <Content Include="PRODUCTOS\54.png" />
+    <Content Include="PRODUCTOS\55.png" />
+    <Content Include="PRODUCTOS\56.png" />
+    <Content Include="PRODUCTOS\57.png" />
+    <Content Include="PRODUCTOS\58.png" />
+    <Content Include="PRODUCTOS\59.png" />
+    <Content Include="PRODUCTOS\6.png" />
+    <Content Include="PRODUCTOS\60.png" />
+    <Content Include="PRODUCTOS\61.png" />
+    <Content Include="PRODUCTOS\62.png" />
+    <Content Include="PRODUCTOS\63.png" />
+    <Content Include="PRODUCTOS\64.png" />
+    <Content Include="PRODUCTOS\65.png" />
+    <Content Include="PRODUCTOS\66.png" />
+    <Content Include="PRODUCTOS\67.png" />
+    <Content Include="PRODUCTOS\68.png" />
+    <Content Include="PRODUCTOS\69.png" />
+    <Content Include="PRODUCTOS\7.png" />
+    <Content Include="PRODUCTOS\70.png" />
+    <Content Include="PRODUCTOS\71.png" />
+    <Content Include="PRODUCTOS\72.png" />
+    <Content Include="PRODUCTOS\73.png" />
+    <Content Include="PRODUCTOS\74.png" />
+    <Content Include="PRODUCTOS\75.png" />
+    <Content Include="PRODUCTOS\76.png" />
+    <Content Include="PRODUCTOS\77.png" />
+    <Content Include="PRODUCTOS\78.png" />
+    <Content Include="PRODUCTOS\79.png" />
+    <Content Include="PRODUCTOS\8.png" />
+    <Content Include="PRODUCTOS\80.png" />
+    <Content Include="PRODUCTOS\81.png" />
+    <Content Include="PRODUCTOS\82.png" />
+    <Content Include="PRODUCTOS\83.png" />
+    <Content Include="PRODUCTOS\84.png" />
+    <Content Include="PRODUCTOS\85.png" />
+    <Content Include="PRODUCTOS\86.png" />
+    <Content Include="PRODUCTOS\87.png" />
+    <Content Include="PRODUCTOS\88.png" />
+    <Content Include="PRODUCTOS\89.png" />
+    <Content Include="PRODUCTOS\9.png" />
+    <Content Include="PRODUCTOS\90.png" />
+    <Content Include="PRODUCTOS\91.png" />
+    <Content Include="PRODUCTOS\92.png" />
+    <Content Include="PRODUCTOS\93.png" />
+    <Content Include="PRODUCTOS\94.png" />
+    <Content Include="PRODUCTOS\95.png" />
+    <Content Include="PRODUCTOS\96.png" />
+    <Content Include="PRODUCTOS\97.png" />
+    <Content Include="PRODUCTOS\98.png" />
+    <Content Include="wfTerapias.aspx" />
+    <Content Include="plantilla\images\bg11.jpeg" />
+    <Content Include="plantilla\images\bg12.jpg" />
+    <Content Include="plantilla\images\bg13.jpg" />
+    <Content Include="plantilla\images\bg14.jpg" />
+    <Content Include="wfProducto.aspx" />
+    <Content Include="plantilla\images\bg10.jpg" />
+    <Content Include="plantilla\images\bg8.jpg" />
+    <Content Include="plantilla\images\bg9.jpg" />
+    <Content Include="plantilla\images\cross1.png" />
+    <Content Include="plantilla\images\cross2.png" />
+    <Content Include="plantilla\images\cross3.png" />
+    <Content Include="plantilla\images\cross4.png" />
+    <Content Include="plantilla\images\cross5.png" />
+    <Content Include="plantilla\images\te2.png" />
+    <Content Include="plantilla\images\te3.png" />
+    <Content Include="wfQuienesSomos.aspx" />
+    <Content Include="plantilla\css\animate.min.css" />
+    <Content Include="plantilla\css\bootstrap.min.css" />
+    <Content Include="plantilla\css\jquery-ui.css" />
+    <Content Include="plantilla\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="plantilla\css\meanmenu.css" />
+    <Content Include="plantilla\css\nice-select.css" />
+    <Content Include="plantilla\css\normalize.css" />
+    <Content Include="plantilla\css\owl.carousel.min.css" />
+    <Content Include="plantilla\css\responsive.css" />
+    <Content Include="plantilla\css\slick.css" />
+    <Content Include="plantilla\images\banner.jpg" />
+    <Content Include="plantilla\images\banner1.jpg" />
+    <Content Include="plantilla\images\banner2.jpg" />
+    <Content Include="plantilla\images\banner3.jpg" />
+    <Content Include="plantilla\images\bg.jpg" />
+    <Content Include="plantilla\images\bg1.jpg" />
+    <Content Include="plantilla\images\bg2.jpeg" />
+    <Content Include="plantilla\images\bg3.jpeg" />
+    <Content Include="plantilla\images\bg4.jpeg" />
+    <Content Include="plantilla\images\bg5.jpg" />
+    <Content Include="plantilla\images\bg6.png" />
+    <Content Include="plantilla\images\bg7.jpg" />
+    <Content Include="plantilla\images\car_img1.png" />
+    <Content Include="plantilla\images\car_img2.png" />
+    <Content Include="plantilla\images\car_img3.png" />
+    <Content Include="plantilla\images\cross_img.png" />
+    <Content Include="plantilla\images\loading.gif" />
+    <Content Include="plantilla\images\logo.png" />
+    <Content Include="plantilla\images\logoLetras.png" />
+    <Content Include="plantilla\images\logoSana1.png" />
+    <Content Include="plantilla\images\menu_icon.png" />
+    <Content Include="plantilla\images\te1.png" />
+    <Content Include="plantilla\js\bootstrap.bundle.min.js" />
+    <Content Include="plantilla\js\custom.js" />
+    <Content Include="plantilla\js\jquery-3.0.0.min.js" />
+    <Content Include="plantilla\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="plantilla\js\jquery.min.js" />
+    <Content Include="plantilla\js\jquery.validate.js" />
+    <Content Include="plantilla\js\plugin.js" />
+    <Content Include="plantilla\js\popper.min.js" />
+    <Content Include="wfInicio.aspx" />
+    <Content Include="wfAcceso.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMINISTRADOR\wfAReportes.aspx.cs">
+      <DependentUpon>wfAReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAReportes.aspx.designer.cs">
+      <DependentUpon>wfAReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAVentas.aspx.cs">
+      <DependentUpon>wfAVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAVentas.aspx.designer.cs">
+      <DependentUpon>wfAVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAProducto.aspx.cs">
+      <DependentUpon>wfAProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAProducto.aspx.designer.cs">
+      <DependentUpon>wfAProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAUsuarios.aspx.cs">
+      <DependentUpon>wfAUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAUsuarios.aspx.designer.cs">
+      <DependentUpon>wfAUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfACerrarSesion.aspx.cs">
+      <DependentUpon>wfACerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfACerrarSesion.aspx.designer.cs">
+      <DependentUpon>wfACerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAInicio.aspx.cs">
+      <DependentUpon>wfAInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\wfAInicio.aspx.designer.cs">
+      <DependentUpon>wfAInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\mpAInicio.Master.cs">
+      <DependentUpon>mpAInicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRADOR\mpAInicio.Master.designer.cs">
+      <DependentUpon>mpAInicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\wfcMisDatos.aspx.cs">
+      <DependentUpon>wfcMisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\wfcMisDatos.aspx.designer.cs">
+      <DependentUpon>wfcMisDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\wfCMisCompras.aspx.cs">
+      <DependentUpon>wfCMisCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\wfCMisCompras.aspx.designer.cs">
+      <DependentUpon>wfCMisCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\wfCCarrito.aspx.cs">
+      <DependentUpon>wfCCarrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\wfCCarrito.aspx.designer.cs">
+      <DependentUpon>wfCCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\wfCCerrarSesion.aspx.cs">
+      <DependentUpon>wfCCerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\wfCCerrarSesion.aspx.designer.cs">
+      <DependentUpon>wfCCerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\wfCInicio.aspx.cs">
+      <DependentUpon>wfCInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\wfCInicio.aspx.designer.cs">
+      <DependentUpon>wfCInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE\mpCInicio.Master.cs">
+      <DependentUpon>mpCInicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\mpCInicio.Master.designer.cs">
+      <DependentUpon>mpCInicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="clsSana.cs" />
+    <Compile Include="wfTerapias.aspx.cs">
+      <DependentUpon>wfTerapias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfTerapias.aspx.designer.cs">
+      <DependentUpon>wfTerapias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfProducto.aspx.cs">
+      <DependentUpon>wfProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfProducto.aspx.designer.cs">
+      <DependentUpon>wfProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfQuienesSomos.aspx.cs">
+      <DependentUpon>wfQuienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfQuienesSomos.aspx.designer.cs">
+      <DependentUpon>wfQuienesSomos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfInicio.aspx.cs">
+      <DependentUpon>wfInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfInicio.aspx.designer.cs">
+      <DependentUpon>wfInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfAcceso.aspx.cs">
+      <DependentUpon>wfAcceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfAcceso.aspx.designer.cs">
+      <DependentUpon>wfAcceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="mpPrincipalGeneral.Master.cs">
+      <DependentUpon>mpPrincipalGeneral.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mpPrincipalGeneral.Master.designer.cs">
+      <DependentUpon>mpPrincipalGeneral.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mpPrincipalGeneral.Master" />
+    <Content Include="ADMINISTRADOR\mpAInicio.Master" />
+    <Content Include="CLIENTE\mpCInicio.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64685</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44344/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
